@@ -16,9 +16,13 @@ cmake_minimum_required(VERSION 3.11.4)
 
 message("INVOKATION")
 
-execute_process(COMMAND "${EXECUTABLE}"
-    OUTPUT_VARIABLE THENUMBER)
+if(NOT EXISTS ${OUTFILE})
 
-message("The result : ${THENUMBER}")
+    execute_process(COMMAND "${EXECUTABLE}"
+        OUTPUT_VARIABLE THENUMBER)
 
-configure_file(${INFILE} ${OUTFILE})
+    message("The result : ${THENUMBER}")
+
+    configure_file(${INFILE} ${OUTFILE})
+
+endif()
