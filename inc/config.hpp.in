@@ -1,0 +1,8 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+namespace melib {
+    const int NB = ${THENUMBER};
+}
+
+#endif
